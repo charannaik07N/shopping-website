@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - Cart with Charan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .btn {
+        display: inline-block;
+        background-color: #ff523b;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+        transition: background-color 0.5s;
+        float: right;
+      }
+
+      .btn:hover {
+        background: #563434;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="images/1.jpg" width="125px" alt="Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html">
+          <img src="images/cartpic.jpg" width="30px" height="30px" alt="Cart" />
+        </a>
+        <img
+          src="images/menu.jpg"
+          width="30px"
+          height="30px"
+          style="padding-left: 5px"
+        />
+      </div>
+    </div>
+
+    <!-- Cart Items Details -->
+    <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        <!-- Cart items will be dynamically inserted here -->
+      </table>
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Subtotal</td>
+            <td id="subtotal">₹0</td>
+          </tr>
+          <tr>
+            <td>Delivery Charges</td>
+            <td id="delivery">₹0</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td id="total">₹0</td>
+          </tr>
+        </table>
+      </div>
+      <a href="#" class="btn" id="buyNow">Buy Now</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download my App</h3>
+            <p>Download App for Android or iOS mobile phones.</p>
+            <div class="App-logo">
+              <img
+                src="images/android.jpg"
+                style="padding: 20px"
+                alt="App Store"
+              />
+              <img
+                src="images/ios.jpg"
+                style="padding: 20px"
+                alt="Google Play"
+              />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo1.jpg" alt="Logo" />
+            <p>
+              Our purpose is to sustainably make the pleasure and benefits of
+              sports accessible to many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog post</li>
+              <li>Return policy</li>
+              <li>Join Affiliates</li>
+            </ul>
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Me</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>X (formerly Twitter)</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copy-right">Copyright - Charan Website</p>
+      </div>
+    </div>
+
+    <script>
+      function displayCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartTable = document.querySelector(".cart-page table");
+
+        let subtotal = 0;
+
+        cartItems.forEach((item) => {
+          const row = document.createElement("tr");
+          const price = parseFloat(item.price.replace("₹", "")) || 0;
+          const quantity = parseInt(item.quantity) || 1;
+
+          row.innerHTML = `
+                <td>
+                    <div class="cart-info">
+                        <img src="${item.image}" alt="${
+            item.name
+          }" width="100px">
+                        <div>
+                            <p>${item.name}</p>
+                            <small>Price ₹${price.toFixed(2)}</small><br>
+                            <a href="#" class="remove-item" data-name="${
+                              item.name
+                            }">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="${quantity}" min="1" class="cart-quantity" data-name="${
+            item.name
+          }"></td>
+                <td>₹${(price * quantity).toFixed(2)}</td>
+            `;
+
+          cartTable.appendChild(row);
+          subtotal += price * quantity;
+        });
+
+        const subtotalElement = document.getElementById("subtotal");
+        const deliveryElement = document.getElementById("delivery");
+        const totalElement = document.getElementById("total");
+
+        if (subtotalElement && deliveryElement && totalElement) {
+          subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
+          const deliveryCharges = subtotal > 0 ? 99 : 0; // Fixed delivery charge
+          deliveryElement.textContent = `₹${deliveryCharges.toFixed(2)}`;
+          totalElement.textContent = `₹${(subtotal + deliveryCharges).toFixed(
+            2
+          )}`;
+        }
+      }
+
+      function removeItemFromCart(name) {
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems = cartItems.filter((item) => item.name !== name);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        window.location.reload();
+      }
+
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-item")) {
+          e.preventDefault();
+          const name = e.target.getAttribute("data-name");
+          removeItemFromCart(name);
+        }
+      });
+
+      document.addEventListener("change", function (e) {
+        if (e.target.classList.contains("cart-quantity")) {
+          const name = e.target.getAttribute("data-name");
+          const newQuantity = parseInt(e.target.value);
+          if (newQuantity > 0) {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems = cartItems.map((item) => {
+              if (item.name === name) {
+                item.quantity = newQuantity;
+              }
+              return item;
+            });
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            document
+              .querySelectorAll(".cart-page table tr:not(:first-child)")
+              .forEach((row) => row.remove());
+            displayCartItems();
+          }
+        }
+      });
+
+      function buyNow() {
+        alert("Thank you for your purchase!");
+        localStorage.removeItem("cartItems");
+        window.location.href = "thankyou.html";
+      }
+
+      document.getElementById("buyNow").addEventListener("click", buyNow);
+      window.onload = displayCartItems;
+    </script>
+  </body>
+</html>

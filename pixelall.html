@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+        }
+        .product-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .product-image img {
+            width: 200px; 
+            height: auto;
+            border-radius: 10px;
+        }
+        .product-details {
+            flex: 2;
+        }
+        .product-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .product-price {
+            color: green;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .product-rating {
+            display: flex;
+            align-items: center;
+        }
+        .stars {
+            color: gold;
+            margin-right: 10px;
+        }
+        .product-specs {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-specs div {
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="image/1.jpg" width="300px" height="150px" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html">
+                <img src="image/cartpic.jpg" width="30px" height="30px" alt="Cart">
+            </a>
+            <img src="image/menu.jpg" width="30px" height="30px" style="padding-left: 5px;" alt="Menu">
+        </div>
+    </div>
+<div class="product-card">
+    <div class="product-image">
+        <a href="pixel9.html">
+        <img src="images/pixel9.jpg" alt="Google Pixel 9 ">
+        </a>
+    </div>
+    <div class="product-details">
+        <div class="product-name">Google Pixel 9 (Obsidian, 256 GB)</div>
+        <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span>(167)</span>
+        </div>
+        <div class="product-price">₹79,999</div>
+        <div>Save extra with combo offers</div>
+        <div>Upto ₹400 Off on Exchange</div>
+        <div>Free delivery by 12th Sep</div>
+        <div>1 year warranty by Google</div>
+        <div class="product-specs">
+            <div>12 GB RAM</div>
+            <div>256 GB Storage</div>
+            <div>16.0 cm (6.3 inch) Display</div>
+            <div>4700 mAh</div>
+            <div>50MP + 48MP</div>
+            <div>10.5 Front Camera</div>
+        </div>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-image">
+        <a href="pixelpro.html">
+            <img src="images/pixelpro.jpg" alt="Google Pixel 9 Pro XL">
+        </a>
+    </div>
+    <div class="product-details">
+        <div class="product-name">Google Pixel 9 Pro (Hazel, 256 GB)</div>
+        <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span>(167)</span>
+        </div>
+        <div class="product-price">₹1,24,999</div>
+        <div>Save extra with combo offers</div>
+        <div>Upto ₹400 Off on Exchange</div>
+        <div>Free delivery by 12th Sep</div>
+        <div>1 year warranty by Google</div>
+        <div class="product-specs">
+            <div>16 GB RAM</div>
+            <div>256 GB Storage</div>
+            <div>17.27 cm (6.7 inch) Display</div>
+            <div>5050 mAh</div>
+            <div>50MP + 48MP + 48MP</div>
+            <div>42MP Front Camera</div>
+        </div>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-image">
+        <a href="pixelproxl.html">
+            <img src="images/pixelproxl.jpg" alt="Google Pixel 9 Pro XL">
+        </a>
+    </div>
+    <div class="product-details">
+        <div class="product-name">Google Pixel 9 Pro XL (Porcelain, 256 GB)</div>
+        <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span>(167)</span>
+        </div>
+        <div class="product-price">₹1,24,999</div>
+        <div>Save extra with combo offers</div>
+        <div>Upto ₹400 Off on Exchange</div>
+        <div>Free delivery by 12th Sep</div>
+        <div>1 year warranty by Google</div>
+        <div class="product-specs">
+            <div>16 GB RAM</div>
+            <div>256 GB Storage</div>
+            <div>17.27 cm (6.8 inch) Display</div>
+            <div>5060 mAh</div>
+            <div>50MP + 48MP + 48MP</div>
+            <div>42MP Front Camera</div>
+        </div>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-image">
+        <a href="pixelfold.html">
+            <img src="images/pixelfold.jpg" alt="Google Pixel 9 Pro XL">
+        </a>
+    </div>
+    <div class="product-details">
+        <div class="product-name">Google Pixel 9 Pro Fold (Obsidian, 256 GB)</div>
+        <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span>(167)</span>
+        </div>
+        <div class="product-price">₹1,74,999</div>
+        <div>Save extra with combo offers</div>
+        <div>Upto ₹400 Off on Exchange</div>
+        <div>Free delivery by 12th Sep</div>
+        <div>1 year warranty by Google</div>
+        <div class="product-specs">
+            <div>16 GB RAM</div>
+            <div>256 GB Storage</div>
+            <div>16.0 cm (6.3 inch) Display</div>
+            <div>4650 mAh</div>
+            <div>48MP + 10.5MP + 10.5MP</div>
+            <div>10MP Front Camera</div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download my App</h3>
+                    <p>Download App for Android or iOS mobile phones.</p>
+                    <div class="App-logo">
+                        <img src="image/android.jpg" style="padding: 20px;" alt="App Store">
+                        <img src="image/ios.jpg" style="padding: 20px;" alt="Google Play">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image/logo1.jpg" alt="Logo">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog post</li>
+                        <li>Return policy</li>
+                        <li>Join Affiliates</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Me</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>X (formerly Twitter)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-right">Copyright - Charan Website</p>
+        </div>
+    </div>
+
+</body>
+</html>

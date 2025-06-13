@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffd6d6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 250px; /* Increased height to fit content */
+            align-items: center; /* Vertically centers content */
+        }
+
+        .product-card img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .product-info {
+            flex-grow: 1; /* Ensures the info section takes up available space */
+        }
+
+        .product-info h2 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .discount {
+            color: #5cb85c;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .exchange, .emi, .delivery {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .features {
+            margin-top: 10px;
+        }
+
+        .features span {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.907);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: orangered;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="image/1.jpg" width="300px" height="150px" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html">
+                <img src="image/cartpic.jpg" width="30px" height="30px" alt="Cart">
+            </a>
+            <img src="image/menu.jpg" width="30px" height="30px" style="padding-left: 5px;" alt="Menu">
+        </div>
+    </div>
+
+    <div class="product-card">
+        <a href="vivo.html">
+            <img src="images/vivogreen.jpg" alt="Vivo T3 Pro 5G (Emerald Green)">
+        </a>
+        
+        <div class="product-info">
+            <h2>vivo T3 Pro 5G (Emerald Green, 256 GB)</h2>
+            <p class="price"><span class="discount">15% Off</span> <span class="old-price">₹31,999</span> ₹26,999</p>
+            <p class="exchange">Upto ₹25,950 Off on Exchange</p>
+            <p class="emi">No Cost EMI from ₹4,000/month</p>
+            <p class="delivery">Free delivery</p>
+            <div class="features">
+                <span>8 GB RAM | 256 GB Storage</span>
+                <span>17.2 cm (6.77 inch) Full HD+ AMOLED Display</span>
+                <span>5500 mAh</span>
+                <span>50MP + 8MP | 16MP Front Camera</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <a href="vivoora.html">
+            <img src="images/vivoorange.jpg" alt="Vivo T3 Pro 5G (Sandstone Orange)">
+        </a>
+        <div class="product-info">
+            <h2>vivo T3 Pro 5G (Sandstone Orange, 256 GB)</h2>
+            <p class="price"><span class="discount">15% Off</span> <span class="old-price">₹31,999</span> ₹26,999</p>
+            <p class="exchange">Upto ₹25,950 Off on Exchange</p>
+            <p class="emi">No Cost EMI from ₹4,000/month</p>
+            <p class="delivery">Free delivery</p>
+            <div class="features">
+                <span>8 GB RAM | 256 GB Storage</span>
+                <span>17.2 cm (6.77 inch) Full HD+ AMOLED Display</span>
+                <span>5500 mAh</span>
+                <span>50MP + 8MP | 16MP Front Camera</span>
+            </div>
+        </div>
+    </div>
+    <div class="product-card">
+        <a href="vivo128green.html">
+
+            <img src="images/vivogreen.jpg" alt="Vivo T3 Pro 5G (Sandstone Orange)">
+        </a>
+        <div class="product-info">
+            <h2>vivo T3 Pro 5G (Emerald Green, 128 GB)</h2>
+            <p class="price"><span class="discount">15% Off</span> <span class="old-price">₹29,999</span> ₹23,999</p>
+            <p class="exchange">Upto ₹25,950 Off on Exchange</p>
+            <p class="emi">No Cost EMI from ₹4,000/month</p>
+            <p class="delivery">Free delivery</p>
+            <div class="features">
+                <span>8 GB RAM | 256 GB Storage</span>
+                <span>17.2 cm (6.77 inch) Full HD+ AMOLED Display</span>
+                <span>5500 mAh</span>
+                <span>50MP + 8MP | 16MP Front Camera</span>
+            </div>
+        </div>
+    </div>
+    <div class="product-card">
+        <a href="vivo128or.html">
+
+            <img src="images/vivoorange.jpg" alt="Vivo T3 Pro 5G (Sandstone Orange)">
+        </a>
+        <div class="product-info">
+            <h2>vivo T3 Pro 5G (Sandstone Orange, 128 GB)</h2>
+            <p class="price"><span class="discount">15% Off</span> <span class="old-price">₹29,999</span> ₹23,999</p>
+            <p class="exchange">Upto ₹25,950 Off on Exchange</p>
+            <p class="emi">No Cost EMI from ₹4,000/month</p>
+            <p class="delivery">Free delivery</p>
+            <div class="features">
+                <span>8 GB RAM | 256 GB Storage</span>
+                <span>17.2 cm (6.77 inch) Full HD+ AMOLED Display</span>
+                <span>5500 mAh</span>
+                <span>50MP + 8MP | 16MP Front Camera</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download my App</h3>
+                    <p>Download App for Android or iOS mobile phones.</p>
+                    <div class="App-logo">
+                        <img src="image/android.jpg" style="padding: 20px;" alt="App Store">
+                        <img src="image/ios.jpg" style="padding: 20px;" alt="Google Play">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image/logo1.jpg" alt="Logo">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog post</li>
+                        <li>Return policy</li>
+                        <li>Join Affiliates</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Me</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>X (formerly Twitter)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-right">Copyright - Charan Website</p>
+        </div>
+    </div>
+</body>
+</html>

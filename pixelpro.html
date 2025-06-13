@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products _ Cart with Charan</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="image/1.jpg" width="300px" height="150px" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html">
+                <img src="image/cartpic.jpg" width="30px" height="30px" alt="Cart">
+            </a>
+            <img src="image/menu.jpg" width="30px" height="30px" style="padding-left: 5px;" alt="Menu">
+        </div>
+    </div>
+    
+    <!-- Single Product Details -->
+    <div class="small-container single-product" style="width: 80%; margin: auto;">
+        <div class="row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <div class="col-2" style="flex: 1;">
+                <img src="images/pixelpro.jpg" alt="iPhone 15 Pro Max" id="productimg" style="width: 100%; max-width: 300px;">
+                  
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/pixelpro1.jpg" style="padding: 5px;" width="100%" class="small-img" alt="Image 2">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/pixelpro2.jpg" style="padding: 5px;" width="100%" class="small-img" alt="Image 3">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/pixelpro3.jpg" style="padding: 5px;" width="100%" class="small-img" alt="Image 4">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/pixelpro4.jpg"style="padding: 5px;" width="100%" class="small-img" alt="Image 5">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/pixelpro5.jpg" style="padding: 5px;" width="100%" class="small-img" alt="Image 5">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-2" style="flex: 1;">
+                <p style="margin: 0; padding: 0; text-align: left;">Pixel</p>
+                <h1 style="margin: 0; padding: 0; text-align: left;">Google Pixel 9 pro </h1>
+                <h4 id="price" style="margin: 0; padding: 0;">₹1,24,999</h4>
+                
+                <select id="storageOptions">
+                    <option value="124999">Obsidian(256 Gb)</option>
+                    <option value="124999">Peony(256 Gb)</option>
+                    <option value="124999">Porcelain(256 Gb)</option>
+                    <option value="124999">Winter Green(256 Gb)</option>
+                    <option value="139999">Obsidian(512 Gb)</option>
+                    <option value="139999">Peony(512 Gb)</option>
+                    <option value="139999">Porcelain(512 Gb)</option>
+                    <option value="139999">Winter Green(512 Gb)</option>
+                </select>
+                <input type="number" value="1" style="text-align: center;">
+                <a href="#" class="btn">Add to cart</a>
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>
+                    The Google Pixel 9 Pro offers top-tier performance with its powerful AI features and an exceptional camera system that captures detailed images in any lighting. It boasts a smooth 6.3-inch display, a long-lasting battery, and a sleek design. With a pure Android experience, it ensures timely updates and seamless usability.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+     <!-- Footer -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download my App</h3>
+                    <p>Download App for Android or iOS mobile phones.</p>
+                    <div class="App-logo">
+                        <img src="image/android.jpg" style="padding: 20px;" alt="App Store">
+                        <img src="image/ios.jpg" style="padding: 20px;" alt="Google Play">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image/logo1.jpg" alt="Logo">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog post</li>
+                        <li>Return policy</li>
+                        <li>Join Affiliates</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Me</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>X (formerly Twitter)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-right">Copyright - Charan Website</p>
+        </div>
+    </div>
+
+    <script>
+
+        var productimg = document.getElementById("productimg");
+        var smallimg = document.getElementsByClassName("small-img");
+        
+        for (let i = 0; i < smallimg.length; i++) {
+            smallimg[i].onclick = function() {
+                productimg.src = smallimg[i].src;
+            }
+        }
+        
+        const priceElement = document.getElementById('price');
+        const storageOptions = document.getElementById('storageOptions');
+        const deliveryCharge = 0;  // Delivery charge set to 99
+        let basePrice = parseInt(storageOptions.value); // Initial base price
+        
+        storageOptions.addEventListener('change', function() {
+            basePrice = parseInt(this.value);
+            const totalPrice = basePrice + deliveryCharge;
+            priceElement.textContent = `₹${totalPrice}`;
+        });
+        
+        document.querySelector('.btn').addEventListener('click', function() {
+            const productName = 'Google pixel 9pro ';
+            const totalPrice = basePrice + deliveryCharge; // Include delivery charge
+            const quantity = parseInt(document.querySelector('input[type="number"]').value);
+            const productPrice = totalPrice * quantity;
+            const productImage = document.getElementById('productimg').src;
+        
+            // Create an object for the product
+            const product = {
+                name: productName,
+                price: `₹${productPrice}`,
+                image: productImage,
+                quantity: quantity
+            };
+        
+            // Get existing cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            
+            // Add new item to cart
+            cartItems.push(product);
+            
+            // Save updated cart back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+            // Redirect to the cart page
+            window.location.href = 'cart.html';
+        });
+        
+    
+    </script>
+    
+</body>
+</html>

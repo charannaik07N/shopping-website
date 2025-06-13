@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL Products _ cart with charan </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="image/1.jpg" width="300px" height="150px" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html">
+                <img src="image/cartpic.jpg" width="30px" height="30px" alt="Cart">
+            </a>
+            <img src="image/menu.jpg" width="30px" height="30px" style="padding-left: 5px;" alt="Menu">
+        </div>
+    </div>
+    
+    <!-----------------single product details---------->
+
+    <div class="small-container single-product" style="width: 80%; margin: auto;">
+        <div class="row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <div class="col-2" style="flex: 1;">
+                <img src="images/vivoorange.jpg" alt="S24 ultra" id="productimg" style="width: 100%; max-width: 300px;">
+                  
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/vivoorange2.jpg" width="100%" class="small-img" alt="Image 2" style="padding: 5px;">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/vivoorange2.jpg" width="100%" class="small-img" alt="Image 3" style="padding: 5px;">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/vivogreen4.jpg" width="100%" class="small-img" alt="Image 3" style="padding: 5px;">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/vivogreen5.jpg" width="100%" class="small-img" alt="Image 3" style="padding: 5px;">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/vivogreen6.jpg" width="100%" class="small-img" alt="Image 3" style="padding: 5px;">
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-2" style="flex: 1;">
+                <p style="margin: 0; padding: 0; text-align: left;">Vivo</p>
+                <h1 style="margin: 0; padding: 0; text-align: left;">Vivo T3 pro</h1>
+                <h4 id="price" style="margin: 0; padding: 0; text-align: left;">₹26,999</h4>
+               
+                <input type="number" value="1" style="text-align: center;">
+                <a href="#" class="btn">Add to cart</a>
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>
+                    The Vivo T3 5G is a powerful mid-range smartphone that impresses with its Snapdragon processor and vibrant AMOLED display. It offers a versatile camera setup, including a 50MP main lens, making it ideal for photography enthusiasts. Additionally, its sleek design and long-lasting battery make it a great choice for daily use.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!--- Tittle -->
+    <div class="small-container">
+        <div class="row row-2">
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download my App</h3>
+                    <p>Download App for Android or iOS mobile phones.</p>
+                    <div class="App-logo">
+                        <img src="image/android.jpg" style="padding: 20px;" alt="App Store">
+                        <img src="image/ios.jpg" style="padding: 20px;" alt="Google Play">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image/logo1.jpg" alt="Logo">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog post</li>
+                        <li>Return policy</li>
+                        <li>Join Affiliates</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Me</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>X (formerly Twitter)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-right">Copyright - Charan Website</p>
+        </div>
+    </div>
+
+    <script>
+        var productimg = document.getElementById("productimg");
+        var smallimg = document.getElementsByClassName("small-img");
+        
+        for (let i = 0; i < smallimg.length; i++) {
+            smallimg[i].onclick = function() {
+                productimg.src = smallimg[i].src;
+            }
+        }
+        
+        document.querySelector('.btn').addEventListener('click', function() {
+            const productName = 'Vivo T3 pro 5G';
+            const basePrice = 26999;  // Set base price for the Vivo T3 Pro 5G
+            const quantity = parseInt(document.querySelector('input[type="number"]').value);
+            const productPrice = basePrice * quantity;
+            const productImage = document.getElementById('productimg').src;
+        
+            // Create an object for the product
+            const product = {
+                name: productName,
+                price: `₹${productPrice}`,
+                image: productImage,
+                quantity: quantity
+            };
+        
+            // Get existing cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            
+            // Add new item to cart
+            cartItems.push(product);
+            
+            // Save updated cart back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+            // Redirect to the cart page
+            window.location.href = 'cart.html';
+        });
+    </script>
+    
+</body>
+</html>

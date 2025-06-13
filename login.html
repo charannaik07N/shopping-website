@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+:root {
+--bg-color: #ecf0f3;
+--color: #555;
+}
+
+*{
+margin: 0;
+padding: 0;
+}
+
+body {
+overflow-x: hidden;
+background-color: var(--bg-color);
+}
+
+/* Welcome message styling */
+.welcome-message {
+text-align: center;
+margin: 20px 0;
+font-size: 24px;
+color: var(--color);
+font-family: 'Arial', sans-serif;
+}
+
+/* Other styles */
+.btn-parent label p::selection {
+background: transparent;
+}
+
+.background {
+width: 100%;
+background-color: var(--bg-color);
+display: flex;
+align-items: center;
+padding: 50px 0;
+}
+
+.card {
+width: 370px;
+height: 500px;
+overflow: hidden;
+margin: auto auto;
+border-radius: 20px;
+background-color: var(--bg-color);
+box-shadow: 13px 13px 20px #cbced1,
+        -13px -13px 20px #fff;
+}
+
+.btn-parent {
+position: relative;
+width: 190px;
+height: 50px;
+background-color: rgba(255, 255, 255, 0.28);
+box-shadow: inset 8px 8px 8px #cbced1,
+inset -8px -8px 8px #fff;
+border: 5px solid #ffffff ;
+box-sizing: border-box;
+border-radius: 20px;
+margin: 10px auto;
+display: flex;
+overflow: hidden;
+}
+
+.btn {
+position: absolute;
+width: 95px;
+height: 50px;
+background: #fff;
+box-shadow: 8px 8px 8px #cbced1,
+        -8px -8px 8px #cbced1;
+border-radius: 20px;
+top: -5px;
+transition: .5s;
+transition-timing-function: cubic-bezier(.89,-0.23,.11,1.38);
+}
+
+.login {
+flex-grow: 1;
+background-color: transparent;
+line-height: 40px;
+color: rgb(83, 83, 83);
+z-index: 9999;
+position: relative;
+}
+
+.login p {
+position: absolute;
+right: 25px;
+}
+
+.register {
+flex-grow: 1;
+text-align: center ;
+line-height: 40px;
+color: rgb(83, 83, 83);
+background-color: transparent;
+z-index: 9999;
+position: relative;
+}
+
+.register p {
+position: absolute;
+right: 20px;
+}
+
+#login {
+display: none;
+}
+
+#register:checked ~ .btn{
+margin-left: 84.25px;
+}
+
+#register {
+display: none;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.register-form {
+    width: 300px;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Form */
+.parent_ {
+height: 100%;
+width: 210%;
+position: relative;
+margin-left: 165px;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+transition: .6s;
+justify-content: space-between;
+}
+
+.parent_.moveRegister {
+margin-left: -225px;
+}
+
+/* Form Styling */
+.form {
+height: 100%;
+width: 400px;
+position: relative;
+right: 160px;
+}
+
+.card form {
+margin: 50px auto;
+width:280px;
+height: 80%;
+position: relative;
+}
+
+.card form input.input-field {
+width: 90%;
+color: var(--color);
+height: 50px;
+border-radius: 5px;
+margin: 10px auto;
+background-color: transparent;
+border-top: none;
+border-bottom: 5px solid white;
+border-left: none;
+border-right: none;
+outline: none;
+font-size: 18px;
+padding: 20px 10px 20px 5px;
+box-sizing: border-box;
+}
+.card form input.input-field:focus {
+border-bottom: 5px solid rgb(155, 155, 155);
+}
+
+.card form a {
+text-decoration: none;
+font-size: 12px;
+margin-left: 30px;
+color: rgb(170, 174, 175);
+}
+
+.card form a:hover {
+text-decoration: underline;
+}
+
+.card form label {
+display: inline-block;
+margin-left: -5px;
+font-size: 12px;
+margin-right: 20px;
+}
+
+.card form input[type="checkbox"] {
+display: inline-block;
+width: 2px;
+margin-right: 15px;
+}
+
+.card form button[type="submit"] {
+width: 90%;
+height: 30px;
+position: absolute;
+bottom: 100px;
+right: 15px;
+border-radius: 30px;
+outline: none;
+font-size: 16px;
+border: none;
+border: 2px solid var(--color);
+background-color: transparent;
+}
+
+.card form button[type="submit"]:active {
+background-color: var(--color);
+color: white;
+}
+
+form.register-form {
+margin-left: 200px;
+z-index: 9999;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Welcome message -->
+    <h1 class="welcome-message">Welcome to my website</h1>
+    
+    <div class="background">
+        <div class="card">
+            <div class="btn-parent">
+                <label for="login" class="login">
+                    <p>Login</p>
+                </label>
+                <label for="register" class="register">
+                    <p>Register</p>
+                </label>
+                <input type="radio" name="login-register" id="login" onclick="login()">
+                <input type="radio" name="login-register" id="register" onclick="register()">
+                <div class="btn"></div>
+            </div>
+            <div class="parent_">
+                <div class="form">
+                    <form action="" class="login-form" onsubmit="redirectToIndex(event)">
+                        <input type="text" name="user-id" id="user-id" required placeholder="Username"
+                            class="input-field">
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-field">
+                        <div class="parent2">
+                            <label for="keep-me-signin"><input type="checkbox" name="" id="keep-me-signin">keep me
+                                signed in</label>
+                            <a href="">Forgot your password?</a>
+                        </div>
+                        <p id="rbtext"></p>
+                        <button type="submit" id="rbtInput" style="margin-right: 5px !important;">Login</button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form action="" class="register-form" onsubmit="redirectToIndex(event)">
+                        <input type="text" name="user-id" id="user-id" required placeholder="Username"
+                            class="input-field">
+                        <input type="email" name="email" id="emailUser" required placeholder="Email"
+                            class="input-field">
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-field">
+                        <p id="rbtext"></p>
+                        <button type="submit" id="rbtInput" style="margin-right: 5px !important;">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let loginBtn = document.querySelector('#login');
+        let registerBtn = document.querySelector('#register');
+        let parent = document.querySelector('.parent_');
+
+        function login() {
+            parent.classList.add('moveLogin');
+            parent.classList.remove('moveRegister');
+        }
+
+        function register() {
+            parent.classList.remove('moveLogin');
+            parent.classList.add('moveRegister');
+        }
+
+        function redirectToIndex(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = 'index.html'; // Redirect to index.html
+        }
+    </script>
+</body>
+</html>

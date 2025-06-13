@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products _ Cart with Charan</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="image/1.jpg" width="300px" height="150px" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html">
+                <img src="image/cartpic.jpg" width="30px" height="30px" alt="Cart">
+            </a>
+            <img src="image/menu.jpg" width="30px" height="30px" style="padding-left: 5px;" alt="Menu">
+        </div>
+    </div>
+    
+    <!-- Single Product Details -->
+    <div class="small-container single-product" style="width: 80%; margin: auto;">
+        <div class="row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <div class="col-2" style="flex: 1;">
+                <img src="image/131.jpg" alt="iPhone 15 Pro Max" id="productimg" style="width: 100%; max-width: 300px;">
+                  
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="image/132.jpg" width="100%" class="small-img" alt="Image 2">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="image/133.jpg" width="100%" class="small-img" alt="Image 3">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="image/134.jpg" width="100%" class="small-img" alt="Image 4">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="image/135.jpg" width="100%" class="small-img" alt="Image 5">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-2" style="flex: 1;">
+                <p style="margin: 0; padding: 0; text-align: left;">Mobile</p>
+                <h1 style="margin: 0; padding: 0; text-align: left;">Apple iPad Pro 13″ (M4):</h1>
+                <h4 id="price" style="margin: 0; padding: 0;">₹1,89,400</h4>
+                
+                <select id="storageOptions">
+                    <option value="169400">wifi 256GB</option>
+                    <option value="179400">wifi 512GB</option>
+                    <option value="189900">wifi 1TB</option>
+                    <option value="229900">wifi 512GB</option>
+                    <option value="147900">wifi+celluar 256GB</option>
+                    <option value="169900">wifi+celuar 512GB</option>
+                    <option value="229900">wifi+celuar 1TB</option>
+                    <option value="249900">wifi+celuar 2TB</option>
+                </select>
+                <input type="number" value="1" style="text-align: center;">
+                <a href="#" class="btn">Add to cart</a>
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>
+                    WHY IPAD PRO — iPad Pro is the ultimate iPad experience in an impossibly thin and light design. Featuring the breakthrough Ultra Retina XDR display, outrageous performance from the M4 chip, superfast wireless connectivity and compatibility with Apple Pencil Pro. Plus powerful productivity features in iPadOS.
+[28.22 cm (11″)/33.02 cm (13″)] ULTRA RETINA XDR DISPLAY — Ultra Retina XDR delivers extreme brightness and contrast and exceptional colour accuracy and features advanced technologies like ProMotion, P3 wide colour and True Tone. Plus a nano-texture display glass option is available in 1TB and 2TB configurations.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+     <!-- Footer -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download my App</h3>
+                    <p>Download App for Android or iOS mobile phones.</p>
+                    <div class="App-logo">
+                        <img src="image/android.jpg" style="padding: 20px;" alt="App Store">
+                        <img src="image/ios.jpg" style="padding: 20px;" alt="Google Play">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image/logo1.jpg" alt="Logo">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog post</li>
+                        <li>Return policy</li>
+                        <li>Join Affiliates</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Me</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>X (formerly Twitter)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-right">Copyright - Charan Website</p>
+        </div>
+    </div>
+
+    <script>
+
+        var productimg = document.getElementById("productimg");
+        var smallimg = document.getElementsByClassName("small-img");
+        
+        for (let i = 0; i < smallimg.length; i++) {
+            smallimg[i].onclick = function() {
+                productimg.src = smallimg[i].src;
+            }
+        }
+        
+        const priceElement = document.getElementById('price');
+        const storageOptions = document.getElementById('storageOptions');
+        const deliveryCharge = 99;  // Delivery charge set to 99
+        let basePrice = parseInt(storageOptions.value); // Initial base price
+        
+        storageOptions.addEventListener('change', function() {
+            basePrice = parseInt(this.value);
+            const totalPrice = basePrice + deliveryCharge;
+            priceElement.textContent = `₹${totalPrice}`;
+        });
+        
+        document.querySelector('.btn').addEventListener('click', function() {
+            const productName = 'iphone 15 pro max';
+            const totalPrice = basePrice + deliveryCharge; // Include delivery charge
+            const quantity = parseInt(document.querySelector('input[type="number"]').value);
+            const productPrice = totalPrice * quantity;
+            const productImage = document.getElementById('productimg').src;
+        
+            // Create an object for the product
+            const product = {
+                name: productName,
+                price: `₹${productPrice}`,
+                image: productImage,
+                quantity: quantity
+            };
+        
+            // Get existing cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            
+            // Add new item to cart
+            cartItems.push(product);
+            
+            // Save updated cart back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+            // Redirect to the cart page
+            window.location.href = 'cart.html';
+        });
+        
+    
+    </script>
+    
+</body>
+</html>

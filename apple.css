@@ -1,0 +1,988 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Main Content Section */
+.main-content {
+    position: relative; /* Allows absolute positioning of child elements */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center-align text */
+    overflow: hidden; /* Prevent overflow */
+    padding: 40px 20px;
+    background-color: #000;
+}
+
+.background-image {
+    position: absolute; /* Position the image behind content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    opacity: 0.8; /* Optional: Slight transparency */
+    z-index: 1; /* Ensure it's behind content */
+}
+
+.content {
+    position: relative; /* Keep this in front of the background */
+    z-index: 2; /* Make sure it appears above the background */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add some padding for aesthetics */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.5rem;
+    color: #d1c6c3;
+    margin-bottom: 2rem;
+}
+
+/* Glowing 'PRO' text */
+.pro-text .pro {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 196, 0, 0.7),
+                     0 0 60px rgba(255, 196, 0, 0.7), 0 0 100px rgba(255, 196, 0, 1);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 196, 0, 0.9),
+                     0 0 80px rgba(255, 196, 0, 1), 0 0 120px rgba(255, 196, 0, 1);
+    }
+}
+
+/* Additional Images Section */
+.additional-images {
+    padding: 40px 20px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additional-images h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.additional-images img {
+    width: 70%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+/* Responsive Media Queries */
+
+/* Small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+        padding: 0 10px; /* Add padding to avoid text sticking to edges */
+    }
+
+    .pro-text .pro {
+        font-size: 3rem;
+    }
+
+    .additional-images img {
+        width: 100%; /* Ensure the image fills the container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .description {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Medium devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.4rem;
+        padding: 0 15px; /* Ensure padding for readability */
+    }
+
+    .pro-text .pro {
+        font-size: 4rem;
+    }
+
+    .additional-images img {
+        width: 90%;
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 15px; /* Add some spacing */
+    }
+
+    .description {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Large devices (max-width: 1068px) */
+@media (max-width: 1068px) {
+    .main-content h1 {
+        font-size: 3rem;
+    }
+
+    .pro-text .pro {
+        font-size: 4.5rem;
+    }
+
+    .additional-images img {
+        width: 80%;
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px;
+    }
+
+    .content p {
+        font-size: 1.6rem; /* Increase text size for readability */
+        padding: 0 20px; /* Add padding to avoid text sticking to the edges */
+    }
+
+    .description {
+        width: 48%;
+        text-align: left;
+        padding: 20px;
+    }
+
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+/* discription code */
+.description-container {
+    display: flex; /* Use Flexbox to arrange children side by side */
+    justify-content: space-between; /* Space out the children evenly */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.description {
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+    background-color: #000;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+.highlight {
+    font-weight: bold; 
+    color: #fff; 
+    text-decoration: underline; 
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description {
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.highlight {
+    font-weight: bold;
+     /* Adjust color as needed */
+}
+.slider {
+    position: relative;
+    width: 100%; 
+    overflow: hidden; 
+    background-color: #231B17; 
+    padding: 20px; 
+}
+
+.slide-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 25%; 
+    text-align: center;
+    padding: 0 10px; 
+}
+
+.image {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #fff; 
+}
+
+/* Button styles */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: rounded buttons */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.apple
+ {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hi {
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+    background-color: #231B17; 
+}
+
+.highlight {
+    font-weight: bold;
+     /* Adjust color as needed */
+}
+
+.bye {
+    text-align: center;
+}
+
+.letter {
+    font-size: 3rem;
+    margin: 0;
+    text-align: center;
+    
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #007aff, #af52de, #f24f8a, #ff4500);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.subtext {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.a{
+    text-align: center;
+}
+.app{
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}
+
+.ima {
+    position: relative;
+    width: 100%; 
+    overflow: hidden; 
+    background-color:#000; 
+    padding: 20px;
+    margin: auto;
+}
+/* batery */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.battery-info {
+ 
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+}
+
+.x {
+    flex: 1;
+    padding: 10px;
+}
+
+.y {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.z {
+    flex-basis: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.q {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.r {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* camera */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+h1, p {
+    margin: 0;
+}
+
+div.camera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+div.camera img {
+    max-width: 40%;
+    margin-right: 50px;
+}
+
+div.camera div {
+    max-width: 50%;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.description p {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+hr {
+    margin: 20px 0;
+    border-color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    div.camera {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    div.camera img {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+    
+    div.camera div {
+        max-width: 90%;
+    }
+}
+
+/* macro  */
+.macro {
+    background-color: #fff; /* White background */
+    text-align: center; /* Center align text and image */
+    padding: 40px;
+}
+
+.Wide h1 {
+    font-size: 2rem;
+    color: #000; /* Black text */
+    margin-bottom: 20px;
+}
+
+.macro p {
+    font-size: 1.2rem;
+    color: #333; /* Dark gray text for paragraph */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; /* Center the paragraph */
+}
+
+.macro img {
+    max-width: 60%; /* Adjust size as needed */
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center the image */
+}
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.product {
+    max-width: 300px;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.dots, .color-options {
+    margin-bottom: 15px;
+}
+
+.dot, .color-dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #888;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active, .color-dot.color1 {
+    background-color: #fff;
+}
+
+.color-dot.color2 { background-color: #b08cff; }
+.color-dot.color3 { background-color: #005eff; }
+.color-dot.color4 { background-color: #7bbf73; }
+.color-dot.color5 { background-color: #333; }
+
+h3 {
+    color: orange;
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007aff;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.compare-section {
+    margin-top: 30px;
+}
+
+.compare-btn {
+    background-color: #666;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.compare-btn:hover {
+    background-color: #555;
+}
+
+.learn-more-btn {
+    background-color: #007aff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.feature-box {
+    max-width: 200px;
+    text-align: center;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.feature-box p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+/* Add this to your apple.css file */
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation for headings */
+h1, h2 {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.5s; /* Adjust delay as needed */
+}
+
+/* Animation for paragraphs */
+p {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s; /* Adjust delay as needed */
+}
+
+/* Animation for images */
+img {
+    opacity: 0;
+    animation: zoomIn 1.5s ease-in-out forwards;
+    animation-delay: 1s; /* Adjust delay as needed */
+}
+
+/* Additional Styling for smooth appearance */
+.main-content h1 {
+    animation-delay: 0.3s;
+}
+
+.main-content p {
+    animation-delay: 0.8s;
+}
+
+.additional-images img, .cover img, .slide-container img, .product-section img {
+    animation-delay: 1.2s;
+}
+
+.description {
+    animation-delay: 1s;
+}
+
+.feature-box img {
+    animation-delay: 1.5s;
+}
+
+/* Enhanced Responsive and Animation Styles */
+
+/* Base responsive layouts */
+:root {
+    --mobile-padding: 15px;
+    --tablet-padding: 25px;
+    --desktop-padding: 40px;
+}
+
+/* Improved Responsive Grid System */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--mobile-padding);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: var(--tablet-padding);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: var(--desktop-padding);
+    }
+}
+
+/* Enhanced Responsive Typography */
+html {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+/* Enhanced Animations */
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+
+/* Enhanced Hover Effects */
+.product:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Improved Responsive Images */
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.background-image:hover {
+    transform: scale(1.05);
+}
+
+/* Animation Classes */
+.animate-float {
+    opacity: 0;
+    animation: floatIn 1s ease forwards;
+}
+
+.animate-scale {
+    opacity: 0;
+    animation: scaleReveal 0.8s ease forwards;
+}
+
+.animate-left {
+    opacity: 0;
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-right {
+    opacity: 0;
+    animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-rotate {
+    opacity: 0;
+    animation: rotateIn 0.8s ease forwards;
+}
+
+/* Staggered Animation Delays */
+.stagger-1 {
+    animation-delay: 0.2s;
+}
+
+.stagger-2 {
+    animation-delay: 0.4s;
+}
+
+.stagger-3 {
+    animation-delay: 0.6s;
+}
+
+.stagger-4 {
+    animation-delay: 0.8s;
+}
+
+/* Enhanced Responsive Grid Layout */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem var(--mobile-padding);
+}
+
+@media (min-width: 768px) {
+    .features-section {
+        padding: 3rem var(--tablet-padding);
+    }
+}
+
+/* Improved Product Grid */
+.product-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem var(--mobile-padding);
+}
+
+/* Enhanced Mobile Navigation */
+@media (max-width: 768px) {
+    .slider .slide {
+        flex: 0 0 100%;
+    }
+
+    .description {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .pro-text .pro {
+        font-size: 3rem;
+    }
+}
+
+/* Improved Tablet Layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slider .slide {
+        flex: 0 0 50%;
+    }
+
+    .description {
+        width: 48%;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .pro-text .pro {
+        font-size: 4rem;
+    }
+}
+
+/* Scroll-triggered Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Interactive Elements */
+.buy-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.buy-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
